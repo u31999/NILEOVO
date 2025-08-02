@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    --primary: 210 100% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 210 11% 15%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 210 9% 45%;
+
+    --accent: 210 17% 95%;
+    --accent-foreground: 210 11% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 33%;
+
+    --radius: 0.75rem;
+    
+    /* Futuristic Metallic Brand Colors */
+    --brand-blue: 210 100% 50%;
+    --brand-blue-light: 210 100% 95%;
+    --brand-cyan: 195 100% 50%;
+    --brand-silver: 210 15% 75%;
+    --brand-silver-light: 210 20% 90%;
+    --brand-steel: 210 25% 35%;
+    --brand-steel-dark: 210 30% 20%;
+    --brand-gray: 210 15% 45%;
+    --brand-gray-light: 210 20% 85%;
+    
+    /* Futuristic Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-cyan)) 50%, hsl(var(--brand-steel)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--brand-silver-light)), hsl(var(--brand-blue-light)) 50%, hsl(0 0% 100%));
+    --gradient-metallic: linear-gradient(135deg, hsl(var(--brand-silver)), hsl(var(--brand-steel)) 50%, hsl(var(--brand-silver-light)));
+    --gradient-tech: linear-gradient(90deg, hsl(var(--brand-blue) / 0.1), hsl(var(--brand-cyan) / 0.1));
+    
+    /* Futuristic Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(var(--brand-blue) / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(var(--brand-blue) / 0.25);
+    --shadow-metallic: 0 15px 35px -5px hsl(var(--brand-steel) / 0.4);
+    --shadow-glow: 0 0 30px hsl(var(--brand-cyan) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Arabic RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  [dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+@layer components {
+  /* Futuristic Hero Section */
+  .hero-background {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(var(--brand-blue) / 0.8), hsl(var(--brand-steel) / 0.6));
+    backdrop-filter: blur(1px);
+  }
+  
+  .hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-tech);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  /* Metallic Card Variants */
+  .card-elegant {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    border: 1px solid hsl(var(--brand-silver) / 0.3);
+  }
+  
+  .card-elegant:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-metallic);
+    border-color: hsl(var(--brand-cyan) / 0.5);
+  }
+  
+  .card-metallic {
+    background: var(--gradient-metallic);
+    box-shadow: var(--shadow-glow);
+    border: 1px solid hsl(var(--brand-steel) / 0.4);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Futuristic Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:from-brand-cyan hover:to-brand-blue;
+    transition: var(--transition-smooth);
+    border: 1px solid hsl(var(--brand-cyan) / 0.5);
+  }
+  
+  .btn-secondary-hero {
+    @apply bg-transparent border-2 border-brand-cyan text-brand-cyan font-semibold px-8 py-4 rounded-lg hover:bg-brand-cyan hover:text-white;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(5px);
+  }
+  
+  .btn-metallic {
+    background: var(--gradient-metallic);
+    @apply border border-brand-steel text-brand-steel-dark font-semibold px-6 py-3 rounded-lg hover:shadow-glow;
+    transition: var(--transition-smooth);
+  }
+  
+  /* Typography */
+  .font-arabic {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+  }
+  
+  .font-english {
+    font-family: 'Poppins', 'Inter', sans-serif;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  /* Futuristic Chatbot */
+  .chatbot-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    animation: float 3s ease-in-out infinite;
+    background: var(--gradient-metallic);
+    border: 1px solid hsl(var(--brand-cyan) / 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  [dir="rtl"] .chatbot-float {
+    right: auto;
+    left: 2rem;
+  }
+  
+  /* Tech Grid Background */
+  .tech-grid {
+    background-image: 
+      linear-gradient(hsl(var(--brand-cyan) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--brand-cyan) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Metallic Surface */
+  .metallic-surface {
+    background: var(--gradient-metallic);
+    position: relative;
+  }
+  
+  .metallic-surface::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--brand-silver) / 0.1) 50%, transparent 70%);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  /* RTL Utilities */
+  .rtl\:mr-auto:where([dir="rtl"], [dir="rtl"] *) {
+    margin-right: auto;
+  }
+  
+  .rtl\:ml-auto:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--brand-cyan) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--brand-cyan) / 0.5);
+  }
+}
