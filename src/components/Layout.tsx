@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/f68093c2-392d-454e-964c-704575ebf0fd.png" 
+                src="/lovable-uploads/logo.jpg" 
                 alt="NILOVO" 
                 className="h-16" 
               />

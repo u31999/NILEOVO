@@ -97,7 +97,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <section className="bg-gradient-primary text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">
@@ -125,6 +125,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+    */}
 
       {/* Services Preview */}
       <section className="py-20">
@@ -209,7 +210,7 @@ const Home: React.FC = () => {
               </Button>
             </Link>
             <Link to="/products">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg">
+              <Button variant="outline" className="border-white text-primary hover:bg-white hover:text-primary px-8 py-4 text-lg">
                 {t('hero.cta.products')}
               </Button>
             </Link>

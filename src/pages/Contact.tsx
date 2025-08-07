@@ -208,8 +208,8 @@ const Contact: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Office Locations */}
+            {/* 
+        Office Locations 
         <div className="mt-20">
           <h2 className="text-3xl font-bold text-primary text-center mb-12">
             {language === 'en' ? 'Our Offices' : 'مكاتبنا'}
@@ -234,8 +234,8 @@ const Contact: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Map Section */}
+          */}
+        {/* Map Section 
         <div className="mt-20">
           <Card className="card-elegant">
             <CardHeader>
@@ -258,8 +258,8 @@ const Contact: React.FC = () => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Emergency Contact */}
+          */}
+        {/* Emergency Contact 
         <div className="mt-20 bg-primary text-white rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">
             {language === 'en' ? 'Emergency Water Service' : 'خدمة المياه الطارئة'}
@@ -300,6 +300,8 @@ const Contact: React.FC = () => {
             </Button>
           </div>
         </div>
+        */}
+       
       </div>
     </div>
   );

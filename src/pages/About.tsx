@@ -143,7 +143,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Timeline Section */}
+        {/* Timeline Section 
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-primary text-center mb-12">
             {language === 'en' ? 'Our Journey' : 'رحلتنا'}
@@ -167,7 +167,7 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-
+*/}
         {/* Location Section */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-primary text-center mb-12">
@@ -284,7 +284,7 @@ const About: React.FC = () => {
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg">
+              <Button variant="outline" className="border-white text-primary hover:bg-white hover:text-primary px-8 py-4 text-lg">
                 {language === 'en' ? 'Our Services' : 'خدماتنا'}
               </Button>
             </Link>
